@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ "`id | grep root`" = "" ]
+then
+    echo "root de execute sitene!"
+    exit 1
+fi
+
 ###################################################
 #
 # pt-query-digest(percona-toolkit_3.0.4-1) install
@@ -35,7 +41,7 @@ printf "###########################################################\n"
 printf " \n"
 printf " \n"
 
-apt-get update &&
+sudo apt-get update &&
 cd /usr/local/src &&
 sudo wget "http://kr.archive.ubuntu.com/ubuntu/pool/main/libd/libdbi-perl/libdbi-perl_1.634-1build1_amd64.deb" &&
 sudo wget "http://security.ubuntu.com/ubuntu/pool/universe/libd/libdbd-mysql-perl/libdbd-mysql-perl_4.033-1ubuntu0.1_amd64.deb" &&
@@ -51,9 +57,13 @@ dpkg -i "libdbi-perl_1.634-1build1_amd64.deb"
 sudo dpkg -l |grep "libdbi-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libdbi-perl"
+  printf "#---------------------------------------------\n"
   printf "1.libdbi-perl は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "1.libdbi-perl はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 
 # - libdbd-mysql-perl  dpkg -i and check
@@ -63,9 +73,13 @@ dpkg -i "libdbd-mysql-perl_4.033-1ubuntu0.1_amd64.deb"
 sudo dpkg -l |grep "libdbd-mysql-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libdbd-mysql-perl"
+  printf "#---------------------------------------------\n"
   printf "2.libdbd-mysql-perl は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "2.libdbd-mysql-perl はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 # - libterm-readkey-perl  dpkg -i and check
 
@@ -76,9 +90,13 @@ sudo dpkg -l |grep "libterm-readkey-perl"
 
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libterm-readkey-perl"
+  printf "#---------------------------------------------\n"
   printf "3.libterm-readkey-perl は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "3.libterm-readkey-perl はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 
 #- libio-socket-ssl-perl  dpkg -i and check
@@ -88,9 +106,13 @@ dpkg -i "libnet-ssleay-perl_1.72-1build1_amd64.deb" &&
 sudo dpkg -l |grep "libnet-ssleay-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libnet-ssleay-perl"
+  printf "#---------------------------------------------\n"
   printf "4.libnet-ssleay-perl は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "4.libnet-ssleay-perl はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 
 # - libnet-ssleay-perl  dpkg -i and check
@@ -100,9 +122,13 @@ dpkg -i "libio-socket-ssl-perl_2.024-1_all.deb" &&
 sudo dpkg -l |grep "libnet-ssleay-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libnet-ssleay-perl"
+  printf "#---------------------------------------------\n"
   printf "5.libnet-ssleay-perl は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "5.libnet-ssleay-perl はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 
 # percona-toolkit and  pt-query-digest
@@ -111,9 +137,13 @@ ls percona-toolkit_3.0.4-1.xenial_amd64.deb &&
 sudo dpkg -i percona-toolkit_3.0.4-1.xenial_amd64.deb &&
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "percona-toolkit"
+  printf "#---------------------------------------------\n"
   printf "6.percona-toolkit は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "6.lpercona-toolkit はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
 
 updatedb
@@ -121,7 +151,11 @@ updatedb
 PTCOM=`locate pt-query-digest |grep "bin"`
 if [ $PTCOM = "/usr/bin/pt-query-digest" ]; then
   echo PATH = `locate pt-query-digest |grep "bin"`
+  printf "#---------------------------------------------\n"
   printf "pt-query-digest は正常にインストールされました\n"
+  printf "#---------------------------------------------\n"
 else
+  printf "#---------------------------------------------\n"
   printf "pt-query-digest はインストールできませんでした\n"
+  printf "#---------------------------------------------\n"
 fi
