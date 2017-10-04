@@ -21,19 +21,19 @@
 # - 6.percona-toolkit-pt-query-digest
 ##################################################################
 
-echo"###########################################################"
-echo"# - percona-toolkit-pt-query-digestのインストールを開始します。"
-echo"#"
-echo"#"
-echo"# - 1.libdbi-perl"
-echo"# - 2.libdbd-mysql-perl"
-echo"# - 3.libterm-readkey-perl"
-echo"# - 4.libio-socket-ssl-perl"
-echo"# - 5.libnet-ssleay-perl"
-echo"# - 6.percona-toolkit-pt-query-digest"
-echo"###########################################################"
-echo" "
-echo" "
+echo "###########################################################"
+echo "# - percona-toolkit-pt-query-digestのインストールを開始します。"
+echo "#"
+echo "#"
+echo "# - 1.libdbi-perl"
+echo "# - 2.libdbd-mysql-perl"
+echo "# - 3.libterm-readkey-perl"
+echo "# - 4.libio-socket-ssl-perl"
+echo "# - 5.libnet-ssleay-perl"
+echo "# - 6.percona-toolkit-pt-query-digest"
+echo "###########################################################"
+echo " "
+echo " "
 
 apt-get update &&
 cd /usr/local/src &&
@@ -51,9 +51,9 @@ dpkg -i "libdbi-perl_1.634-1build1_amd64.deb"
 sudo dpkg -l |grep "libdbi-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libdbi-perl"
-  echo"1.libdbi-perl は正常にインストールされました"
+  echo "1.libdbi-perl は正常にインストールされました"
 else
-  echo"1.libdbi-perl はインストールできませんでした"
+  echo "1.libdbi-perl はインストールできませんでした"
 fi
 
 # - libdbd-mysql-perl  dpkg -i and check
@@ -63,9 +63,9 @@ dpkg -i "libdbd-mysql-perl_4.033-1ubuntu0.1_amd64.deb"
 sudo dpkg -l |grep "libdbd-mysql-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libdbd-mysql-perl"
-  echo"2.libdbd-mysql-perl は正常にインストールされました"
+  echo "2.libdbd-mysql-perl は正常にインストールされました"
 else
-  echo"2.libdbd-mysql-perl はインストールできませんでした"
+  echo "2.libdbd-mysql-perl はインストールできませんでした"
 fi
 # - libterm-readkey-perl  dpkg -i and check
 
@@ -76,9 +76,9 @@ sudo dpkg -l |grep "libterm-readkey-perl"
 
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libterm-readkey-perl"
-  echo"3.libterm-readkey-perl は正常にインストールされました"
+  echo "3.libterm-readkey-perl は正常にインストールされました"
 else
-  echo"3.libterm-readkey-perl はインストールできませんでした"
+  echo "3.libterm-readkey-perl はインストールできませんでした"
 fi
 
 #- libio-socket-ssl-perl  dpkg -i and check
@@ -88,9 +88,9 @@ dpkg -i "libnet-ssleay-perl_1.72-1build1_amd64.deb" &&
 sudo dpkg -l |grep "libnet-ssleay-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libnet-ssleay-perl"
-  echo"4.libnet-ssleay-perl は正常にインストールされました"
+  echo "4.libnet-ssleay-perl は正常にインストールされました"
 else
-  echo"4.libnet-ssleay-perl はインストールできませんでした"
+  echo "4.libnet-ssleay-perl はインストールできませんでした"
 fi
 
 # - libnet-ssleay-perl  dpkg -i and check
@@ -100,9 +100,9 @@ dpkg -i "libio-socket-ssl-perl_2.024-1_all.deb" &&
 sudo dpkg -l |grep "libnet-ssleay-perl"
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "libnet-ssleay-perl"
-  echo"5.libnet-ssleay-perl は正常にインストールされました"
+  echo "5.libnet-ssleay-perl は正常にインストールされました"
 else
-  echo"5.libnet-ssleay-perl はインストールできませんでした"
+  echo "5.libnet-ssleay-perl はインストールできませんでした"
 fi
 
 # percona-toolkit and  pt-query-digest
@@ -111,9 +111,9 @@ ls percona-toolkit_3.0.4-1.xenial_amd64.deb &&
 sudo dpkg -i percona-toolkit_3.0.4-1.xenial_amd64.deb &&
 if [  $? = 0  ]; then
   sudo dpkg -l |grep "percona-toolkit"
-  echo"6.percona-toolkit は正常にインストールされました"
+  echo "6.percona-toolkit は正常にインストールされました"
 else
-  echo"6.lpercona-toolkit はインストールできませんでした"
+  echo "6.lpercona-toolkit はインストールできませんでした"
 fi
 
 updatedb
@@ -121,7 +121,7 @@ updatedb
 PTCOM=`locate pt-query-digest |grep "bin"`
 if [ $PTCOM = "/usr/bin/pt-query-digest" ]; then
   echo PATH = `locate pt-query-digest |grep "bin"`
-  echo"pt-query-digest は正常にインストールされました"
+  echo "pt-query-digest は正常にインストールされました"
 else
-  echo"pt-query-digest はインストールできませんでした"
+  echo "pt-query-digest はインストールできませんでした"
 fi

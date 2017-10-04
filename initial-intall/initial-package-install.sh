@@ -1,7 +1,7 @@
 #/bin/bash
 
 sudo apt-get update
-sudo apt-get --yes install dstat tree expect
+sudo apt-get --yes install dstat tree expect unzip
 
 # reference
 # expect
