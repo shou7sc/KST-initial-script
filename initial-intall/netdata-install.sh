@@ -3,7 +3,7 @@
 bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 
 if [  $? = 0  ]; then
-  echo "alp は正常にインストールされました"
+  echo "netdata は正常にインストールされました"
 else
-  echo "alp はインストールできませんでした"
+  echo "netdata はインストールできませんでした"
 fi
