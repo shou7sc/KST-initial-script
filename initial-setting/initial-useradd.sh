@@ -15,12 +15,12 @@ then
     exit 1
 fi
 
-user1="stakamura"
-PW1="stakamura"
-user2="skaneko"
-PW2="skaneko"
-user3="kanon"
-PW3="kanon"
+user1="******"
+PW1="******"
+user2="******"
+PW2="******"
+user3="******"
+PW3="******"
 
 ############
 # user1
