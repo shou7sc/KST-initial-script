@@ -1,5 +1,16 @@
 #/bin/bash
 
+user1="******"
+PW1="******"
+user2="******"
+PW2="******"
+user3="******"
+PW3="******"
+GIT_COM_HOSNAME=""
+GIT_SSH_SECRET_KEY_NAME=""
+
+########################
+
 if [ "`id | grep root`" = "" ]
 then
     echo "root de execute sitene!"
@@ -15,12 +26,6 @@ then
     exit 1
 fi
 
-user1="******"
-PW1="******"
-user2="******"
-PW2="******"
-user3="******"
-PW3="******"
 
 ############
 # user1
@@ -62,6 +67,7 @@ fi
 
 cd /home/$user1/ &&
 mkdir .ssh ; sleep 1s &&
+sudo chown $user1:$user1 .ssh &&
 chmod 700 .ssh ; sleep 1s &&
     echo "#------------------------------------------------------------------------" &&
     echo " ".ssh"ファイルが permission 700 own $user1:$user1 であること確認する " &&
@@ -69,11 +75,14 @@ chmod 700 .ssh ; sleep 1s &&
 ls -al .ssh &&
 cd .ssh &&
 echo -e 'Host git-<リポジトリ名>\n    HostName github.com\n    IdentityFile ~/.ssh/secret-key\n    User git' > config &&
+sudo chown $user1:$user1 config &&
 chmod 600 config ; sleep 1s &&
     echo "#------------------------------------------------------------------------" &&
     echo " "config"ファイルが permission 600 own $user1:$user1 であること確認する " &&
     echo "#------------------------------------------------------------------------" &&
 ls -al config
+
+# git-setting
 
 ###########
 # user2
@@ -117,6 +126,7 @@ fi
 
 cd /home/$user2/ &&
 mkdir .ssh ; sleep 1s &&
+sudo chown $user2:$user2 .ssh &&
 chmod 700 .ssh ; sleep 1s &&
 echo "#------------------------------------------------------------------------" &&
 echo " ".ssh"ファイルが permission 700 own $user2:$user2 であること確認する " &&
@@ -124,11 +134,16 @@ echo "#------------------------------------------------------------------------"
 ls -al .ssh &&
 cd .ssh &&
 echo -e 'Host git-<リポジトリ名>\n    HostName github.com\n    IdentityFile ~/.ssh/secret-key\n    User git' > config &&
+sudo chown $user2:$user2 config &&
 chmod 600 config ; sleep 1s &&
 echo "#------------------------------------------------------------------------\n" &&
 echo " "config"ファイルが permission 600 own $user2:$user2 であること確認する \n" &&
 echo "#------------------------------------------------------------------------\n" &&
+
 ls -al config
+
+# git-setting
+
 
 ###########
 # user3
@@ -170,6 +185,7 @@ fi
 
 cd /home/$user3/ &&
 mkdir .ssh ; sleep 1s &&
+chown $user3:$user3 .ssh &&
 chmod 700 .ssh ; sleep 1s &&
     echo "#------------------------------------------------------------------------" &&
     echo " ".ssh"ファイルが permission 700 own $user3:$user3 であること確認する " &&
@@ -177,8 +193,11 @@ chmod 700 .ssh ; sleep 1s &&
 ls -al .ssh &&
 cd .ssh &&
 echo -e 'Host git-<リポジトリ名>\n    HostName github.com\n    IdentityFile ~/.ssh/secret-key\n    User git' > config &&
+sudo chown $user3:$user3 config &&
 chmod 600 config ; sleep 1s &&
     echo "#------------------------------------------------------------------------" &&
     echo " "config"ファイルが permission 600 own $user3:$user3 であること確認する " &&
     echo "#------------------------------------------------------------------------" &&
 ls -al config
+
+# user3-gitsetting
