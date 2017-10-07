@@ -4,14 +4,14 @@
 # - variable
 #-----------------------
 
-user1="******"
-PW1="******"
-user2="******"
-PW2="******"
-user3="******"
-PW3="******"
-GIT_COM_HOSNAME="test"
-GIT_SSH_SECRET_KEY_NAME=""
+user1="*"
+PW1="*"
+user2="*"
+PW2="*"
+user3="*"
+PW3="*"
+GIT_COM_HOSNAME="shou7sc"
+GIT_SSH_SECRET_KEY_NAME="id_rsa_github_shou7sc"
 
 ########################
 
@@ -120,7 +120,10 @@ echo "#------------------------------------------------------------------------"
 echo "# config作成 及び 権限付与をします" &&
 echo "#------------------------------------------------------------------------" &&
 
-echo -e "Host git-$GIT_COM_HOSNAME\n    HostName github.com\n    IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME\n    User git" > config &&
+echo "Host git-$GIT_COM_HOSNAME" > config &&
+echo " HostName github.com" >> config &&
+echo " IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME" >> config &&
+echo " User git" >> config &&
 sudo chown $user1:$user1 config ; sleep 1s &&
 chmod 600 config ; sleep 1s &&
 ls -al config &&
@@ -211,7 +214,10 @@ echo "#------------------------------------------------------------------------"
 echo "# config作成 及び 権限付与をします" &&
 echo "#------------------------------------------------------------------------" &&
 
-echo -e "Host git-$GIT_COM_HOSNAME\n    HostName github.com\n    IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME\n    User git" > config &&
+echo "Host git-$GIT_COM_HOSNAME" > config &&
+echo " HostName github.com" >> config &&
+echo " IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME" >> config &&
+echo " User git" >> config &&
 sudo chown $user2:$user2 config ; sleep 1s &&
 chmod 600 config ; sleep 1s &&
 ls -al config &&
@@ -303,7 +309,10 @@ echo "#------------------------------------------------------------------------"
 echo "# config作成 及び 権限付与をします" &&
 echo "#------------------------------------------------------------------------" &&
 
-echo -e "Host git-$GIT_COM_HOSNAME\n    HostName github.com\n    IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME\n    User git" > config &&
+echo "Host git-$GIT_COM_HOSNAME" > config &&
+echo " HostName github.com" >> config &&
+echo " IdentityFile ~/.ssh/$GIT_SSH_SECRET_KEY_NAME" >> config &&
+echo " User git" >> config &&
 sudo chown $user3:$user3 config ; sleep 1s &&
 chmod 600 config ; sleep 1s &&
 ls -al config &&
@@ -316,5 +325,5 @@ echo "#cat config" &&
 cat config &&
 echo "#------------------------------------------------------------------------" &&
 echo "#"config"ファイルの設定が正しいことを確認する" &&
-echo "#------------------------------------------------------------------------" &&
+echo "#------------------------------------------------------------------------" 
 
