@@ -28,7 +28,7 @@ isucon-initial-2017 KST
 ```
 
 * #mysqldump-restore.sh # mysqldump restore用
-	* root pass を記載する必要あり
+	* root pass
 * initial-useradd.sh # useradd and git setting
 	* user1 pw1
 	* user2 pw2
