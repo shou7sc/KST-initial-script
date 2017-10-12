@@ -4,14 +4,14 @@
 # - variable
 #-----------------------
 
-user1="*"
-PW1="*"
-user2="*"
-PW2="*"
-user3="*"
-PW3="*"
-GIT_COM_HOSNAME="shou7sc"
-GIT_SSH_SECRET_KEY_NAME="id_rsa_github_shou7sc"
+user1="stakamura"
+PW1="stakamura"
+user2="skaneko"
+PW2="skaneko"
+user3="kanon"
+PW3="kanon"
+GIT_COM_HOSNAME="yadex205"
+GIT_SSH_SECRET_KEY_NAME="id_rsa_kst_isucon7"
 
 ########################
 

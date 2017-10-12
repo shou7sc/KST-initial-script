@@ -9,25 +9,30 @@ isucon-initial-2017 KST
 
 ```
 ├── initial-check
-│   ├── git-ping-check.sh # git設定確認スクリプト
-│   └── initial-check-package.sh # 初期インストールチェックスクリプト
+│   ├── git-ping-check.sh # git設定確認スクリプト ③
+│   └── initial-check-package.sh # 初期インストールチェックスクリプト④
 ├── initial-intall
 │   ├── alp-install.sh #alpインストールスクリプト
-│   ├── initial-install-wrapper.sh #初期インストール ラッパースクリプト
+│   ├── initial-install-wrapper.sh #初期インストール ラッパースクリプト②
 │   ├── netdata-install.sh #netdataインストールスクリプト
 │   ├── package-install.sh #各種packageインストールスクリプト
 │   └── pt-query-digest-install.sh #pt-query-digest インストールスクリプト
 ├── initial-setting
-│   └── initial-useradd.sh #useradd and git setting 
+│   └── initial-useradd.sh #useradd and git setting ①
 ├── README.md
 └── script
     ├── mysqldump-create.sh # mysqldump取得用
     ├── mysqldump-restore.sh # mysqldump restore用
     ├── rest-app-for-python.sh # python app benchmark前 restart-script
-    └── rest-app-for-ruby.sh # python app benchmark前 restart-script
+    └── rest-app-for-ruby.sh # ruby app benchmark前 restart-script
 ```
 
-* #mysqldump-restore.sh # mysqldump restore用
+
+#### 
+
+* initial-check-package.sh
+	* root pass
+* mysqldump-restore.sh # mysqldump restore用
 	* root pass
 * initial-useradd.sh # useradd and git setting
 	* user1 pw1
