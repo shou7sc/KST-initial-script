@@ -14,5 +14,5 @@ cd ../ &&
 mkdir backup-def &&
 cd backup-def &&
 mkdir AP DB WEB &&
-cd ../
+cd ../ &&
 tree -L 2 

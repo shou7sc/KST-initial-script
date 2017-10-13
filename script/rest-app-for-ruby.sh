@@ -1,11 +1,11 @@
 #!/bin/bash
 set -ex
 
-if [ -f /var/lib/mysql/isucon7-image-slow.log ]; then
-    sudo mv /var/lib/mysql/isucon7-image-slow.log /var/lib/mysql/isucon7-image-slow.log.$(date "+%Y%m%d_%H%M%S")
+if [ -f /var/lib/mysql/isucon-slow.log ]; then
+    sudo mv /var/lib/mysql/isucon-slow.log /root/analysis/sql-analysys/isucon-slow.log.$(date "+%Y%m%d_%H%M%S")
 fi
 if [ -f /var/log/nginx/access-log ]; then
-    sudo mv /var/log/nginx/access-log /var/log/nginx/access-log.$(date "+%Y%m%d_%H%M%S")
+    sudo mv /var/log/nginx/access-log /root/analysis/access-analysys/access-log.$(date "+%Y%m%d_%H%M%S")
 fi
 
 sudo systemctl restart mysql.service
