@@ -10,10 +10,10 @@ cd /root &&
 mkdir analysis &&
 cd analysis &&
 mkdir dstat access-analysys sql-analysys &&
-mkdir ./dstat/dstat-res-analysis &&
-mkdir ./access-analysys/acc-res-analysis &&
-mkdir ./sql-analysys/sql-res-analysis &&
-mkdir ./dstat/log ./access-analysys/log ./sql-analysys/log &&
+mkdir ./dstat/02-dstat-res-analysis &&
+mkdir ./access-analysys/02-acc-res-analysis &&
+mkdir ./sql-analysys/02-sql-res-analysis &&
+mkdir ./dstat/01-log ./access-analysys/01-log ./sql-analysys/01-log &&
 cd ../ &&
 mkdir backup-def &&
 cd backup-def &&
