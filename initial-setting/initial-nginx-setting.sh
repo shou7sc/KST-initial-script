@@ -76,21 +76,21 @@ fi
     echo "------------------------------------------------------------------------" ; sleep 3 &&
 
 sed -i ""$ADDLINENUMBER"i\log_format ltsv \"time:\$time_local\"\n\
-                \"\\\thost:\$remote_addr\"\n\
-                \"\\\tforwardedfor:$\http_x_forwarded_for\"\n\
-                \"\\\treq:\$request\"\n\
-                \"\\\tstatus:\$status\"\n\
-                \"\\\tmethod:\$request_method\"\n\
-                \"\\\turi:\$request_uri\"\n\
-                \"\\\tsize:\$body_bytes_sent\"\n\
-                \"\\\treferer:\$http_referer\"\n\
-                \"\\\tua:\$http_user_agent\"\n\
-                \"\\\treqtime:\$request_time\"\n\
-                \"\\\tcache:\$upstream_http_x_cache\"\n\
-                \"\\\truntime:\$upst:wream_http_x_runtime\"\n\
-                \"\\\tapptime:\$upstream_response_time\"\n\
-                \"\\\tvhost:\$host\";\n\
-    access_log  /var/log/nginx/access-log  ltsv;" $NGINXCONF
+\"\\\thost:\$remote_addr\"\n\
+\"\\\tforwardedfor:$\http_x_forwarded_for\"\n\
+\"\\\treq:\$request\"\n\
+\"\\\tstatus:\$status\"\n\
+\"\\\tmethod:\$request_method\"\n\
+\"\\\turi:\$request_uri\"\n\
+\"\\\tsize:\$body_bytes_sent\"\n\
+\"\\\treferer:\$http_referer\"\n\
+\"\\\tua:\$http_user_agent\"\n\
+\"\\\treqtime:\$request_time\"\n\
+\"\\\tcache:\$upstream_http_x_cache\"\n\
+\"\\\truntime:\$upstream_http_x_runtime\"\n\
+\"\\\tapptime:\$upstream_response_time\"\n\
+\"\\\tvhost:\$host\";\n\
+        access_log /var/log/nginx/access.log ltsv;" $NGINXCONF
 
 if [ $? = 0 ];then
     echo "$NGINXCONF"
@@ -104,6 +104,8 @@ if [ $? = 0 ];then
     echo "                                                                        "
     echo " $NGINXCONF の設定が正常に設定が書き換えられました。"
     echo "                                                                        "
+    echo " nginx -t                                                                    "
+    echo " systemctl restart nginx.service                                                               "
     echo "                                                                        "
     echo "------------------------------------------------------------------------"
 else
@@ -117,6 +119,10 @@ else
     echo "                                                                        "
     echo "                                                                        "
     echo " $NGINXCONF の設定が正常に設定が書き換えられませんでした。"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo " nginx -t                                                                    "
+    echo " systemctl restart nginx.service                                                               "
     echo "                                                                        "
     echo "                                                                        "
     echo "------------------------------------------------------------------------" 
