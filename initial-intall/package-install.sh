@@ -2,10 +2,11 @@
 
 ### package install
 
-sudo apt-get update
-sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony"
+sudo apt-get update 
+sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony" "sysstat" "mlocate" 
+sudo apt install bc 
 
-sudo apt install bc
+updatedb 
 
 #### chrony-setting
 
