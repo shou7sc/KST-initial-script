@@ -8,9 +8,9 @@ rootpass="****"
 
 ########################
 
-mysqldump -u root -p{$rootpass} –all-databases > mysql-backup.sql.`date '+%Y%m%d_%H%M'` &&
+mysqldump -u root -p{$rootpass} –all-databases > mysql-backup-def.sql &&
 
-ls mysql-backup.sql.`date '+%Y%m%d_%H%M'`
+ls mysql-backup-def.sql
 
 if [  $? = 0  ]; then
   echo "正常にダンプファイルが作成されました"
