@@ -6,10 +6,16 @@
 
 user1="stakamura"
 PW1="stakamura"
+gitacuser1="shou7sc"
+gitmailuser1="shou7sc@yahoo.co.jp"
 user2="skaneko"
 PW2="skaneko"
+gitacuser2="seinto1003"
+gitmailuser2="seinto1003@gmail.com"
 user3="kanon"
 PW3="kanon"
+gitacuser3="yadex205"
+gitmailuser3="canon.kakuno@outlook.jp"
 GIT_COM_HOSNAME="yadex205"
 GIT_SSH_SECRET_KEY_NAME="id_rsa_kst_isucon7"
 
@@ -138,6 +144,9 @@ echo "#------------------------------------------------------------------------"
 echo "#"config"ファイルの設定が正しいことを確認する" &&
 echo "#------------------------------------------------------------------------" &&
 
+git config --global user.name "$gitacuser1" &&
+git config --global user.email "$gitmailuser1"
+
 #############################################################
 # user2
 ############################################################
@@ -231,6 +240,9 @@ cat config &&
 echo "#------------------------------------------------------------------------" &&
 echo "#"config"ファイルの設定が正しいことを確認する" &&
 echo "#------------------------------------------------------------------------" &&
+
+git config --global user.name "$gitacuser2" &&
+git config --global user.email "$gitmailuser2"
 
 ############################################################
 # user3
@@ -327,3 +339,5 @@ echo "#------------------------------------------------------------------------"
 echo "#"config"ファイルの設定が正しいことを確認する" &&
 echo "#------------------------------------------------------------------------" 
 
+git config --global user.name "$gitacuser3" &&
+git config --global user.email "$gitmailuser3"
