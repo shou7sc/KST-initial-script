@@ -5,6 +5,8 @@
 sudo apt-get update
 sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony"
 
+sudo apt install bc
+
 #### chrony-setting
 
 echo "server ntp1.jst.mfeed.ad.jp offline iburst" >> /etc/chrony/chrony.conf &&
