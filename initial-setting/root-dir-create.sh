@@ -19,4 +19,4 @@ mkdir backup-def &&
 cd backup-def &&
 mkdir AP DB WEB &&
 cd ../ &&
-tree -L 4
+tree -L /root
