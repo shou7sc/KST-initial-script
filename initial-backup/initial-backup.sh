@@ -9,19 +9,122 @@
 #-WEB
 NGINXCONF=/etc/nginx/nginx.conf
 #-AP
-APCONFISUDA=/home/isucon/webapp/ruby/lib/isuda/
-APCONFISUTAR=/home/isucon/webapp/ruby/lib/isutar/
+APDIR=/home/isucon/webapp/ruby
 #-DB
 MYCONF=/etc/mysql/my.cnf
 
 #################################################################################
 
-cp -ap /etc/nginx/nginx.conf /root/backup-def/WEB/nginx.conf.def
-cp -ap /home/isucon/webapp/ruby/lib/isuda/ /root/backup-def/AP/isuda-def
-cp -ap /home/isucon/webapp/ruby/lib/isutar/ /root/backup-def/AP/isutar-def
-cp -ap /etc/mysql/my.cnf /root/backup-def/DB/my.cnf.def
+########################################################################
+#
+# 1. $NGINXCONFバックアップ
+#
+#########################################################################
 
+echo "------------------------------------------------------------------------"
+echo "                                                                        "
+echo "1. $NGINXCONF のバックアップを取得します。                              "
+echo "                                                                        "
+echo "------------------------------------------------------------------------" ;sleep 2
+
+cp -ap $NGINXCONF /root/backup-def/WEB/nginx.conf.def-backup
+
+if [ $? = 0 ];then
 ls -al /root/backup-def/WEB/nginx.conf.def
-ls -al /root/backup-def/AP/isuda-def
-ls -al  /root/backup-def/AP/isutar-def
-ls -al /root/backup-def/DB/my.cnf.def
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
+    echo " $NGINXCONF のバックアップが正常に取得されました。                "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------" ;sleep 2
+else
+ls -al /root/backup-def/WEB/nginx.conf.def
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
+    echo " $NGINXCONF のバックアップが取得できませんでした。                      "
+    echo " 再度実行してください。                                                 "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------"
+    exit 1
+fi
+
+########################################################################
+#
+# 2.$APDIRバックアップ
+#
+#########################################################################
+
+echo "------------------------------------------------------------------------"
+echo "                                                                        "
+echo "2. $APDIR のバックアップを取得します。                              "
+echo "                                                                        "
+echo "------------------------------------------------------------------------" ;sleep 2
+
+cp -ap $APDIR /root/backup-def/AP/appdir-def-backup
+
+if [ $? = 0 ];then
+ls -al /root/backup-def/AP/appdir-def-backup
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
+    echo " $APDIR のバックアップが正常に取得されました。                "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------" ;sleep 2
+else
+ls -al /root/backup-def/AP/appdir-def-backup
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
+    echo " $APDIR のバックアップが取得できませんでした。                      "
+    echo " 再度実行してください。                                                 "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------"
+    exit 1
+fi
+
+########################################################################
+#
+# 3.MYCONFバックアップ
+#
+#########################################################################
+
+echo "------------------------------------------------------------------------"
+echo "                                                                        "
+echo "3. $MYCONF のバックアップを取得します。                              "
+echo "                                                                        "
+echo "------------------------------------------------------------------------" ;sleep 2
+
+cp -ap /etc/mysql/my.cnf /root/backup-def/DB/my.cnf.def-backup
+
+if [ $? = 0 ];then
+ls -al /root/backup-def/DB/my.cnf.def-backup
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
+    echo " $MYCONF のバックアップが正常に取得されました。                "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------" ;sleep 2
+else
+ls -al /root/backup-def/DB/my.cnf.def-backup
+    echo "------------------------------------------------------------------------"
+    echo "                                                                        "
+    echo "                                                                        "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
+    echo " $MYCONF のバックアップが取得できませんでした。                      "
+    echo " 再度実行してください。                                                 "
+    echo "                                                                        "
+    echo "                                                                        "
+    echo "------------------------------------------------------------------------"
+    exit 1
+fi
