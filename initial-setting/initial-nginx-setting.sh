@@ -47,10 +47,10 @@ fi
     echo "------------------------------------------------------------------------" ; sleep 3
 
 cp -ap $NGINXCONF "nginx.conf.`date '+%Y%m%d_%H%M'`" &&
-mv "nginx.conf.`date '+%Y%m%d_%H%M'`" /root/backup-def/WEB/
+mv "nginx.conf.`date '+%Y%m%d_%H%M'`" /root/backup/WEB/
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/WEB/nginx.conf.`date '+%Y%m%d_%H%M'`
+ls -al /root/backup/WEB/nginx.conf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
     echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "

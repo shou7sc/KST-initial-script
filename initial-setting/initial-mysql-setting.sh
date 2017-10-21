@@ -46,10 +46,10 @@ echo "                                                                        "
 echo "------------------------------------------------------------------------" ; sleep 3
 
 cp -ap $MYCONF "my.cnf.`date '+%Y%m%d_%H%M'`" &&
-mv "my.cnf.`date '+%Y%m%d_%H%M'`" /root/backup-def/DB/
+mv "my.cnf.`date '+%Y%m%d_%H%M'`" /root/backup/DB/
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/DB/my.cnf.`date '+%Y%m%d_%H%M'`
+ls -al /root/backup/DB/my.cnf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
     echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
@@ -58,7 +58,7 @@ ls -al /root/backup-def/DB/my.cnf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "------------------------------------------------------------------------"
 else
-ls -al /root/backup-def/DB/my.cnf.`date '+%Y%m%d_%H%M'`
+ls -al /root/backup/DB/my.cnf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
     echo -e " [result]  === \033[0;31mfail\033[0;39m                              "

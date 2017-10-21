@@ -27,10 +27,10 @@ echo "1. $NGINXCONF のバックアップを取得します。                  
 echo "                                                                        "
 echo "------------------------------------------------------------------------" ;sleep 2
 
-cp -ap $NGINXCONF /root/backup-def/WEB/nginx.conf.def-backup
+cp -ap $NGINXCONF /root/backup/WEB/nginx.conf.def-backup
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/WEB/nginx.conf.def-backup
+ls -al /root/backup/WEB/nginx.conf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -40,7 +40,7 @@ ls -al /root/backup-def/WEB/nginx.conf.def-backup
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ;sleep 2
 else
-ls -al /root/backup-def/WEB/nginx.conf.def-backup
+ls -al /root/backup/WEB/nginx.conf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -65,10 +65,10 @@ echo "2. $APDIR のバックアップを取得します。                      
 echo "                                                                        "
 echo "------------------------------------------------------------------------" ;sleep 2
 
-cp -ap $APDIR /root/backup-def/AP/appdir-def-backup
+cp -ap $APDIR /root/backup/AP/appdir-def-backup
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/AP/appdir-def-backup
+ls -al /root/backup/AP/appdir-def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -78,7 +78,7 @@ ls -al /root/backup-def/AP/appdir-def-backup
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ;sleep 2
 else
-ls -al /root/backup-def/AP/appdir-def-backup
+ls -al /root/backup/AP/appdir-def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -103,10 +103,10 @@ echo "3. $MYCONF のバックアップを取得します。                     
 echo "                                                                        "
 echo "------------------------------------------------------------------------" ;sleep 2
 
-cp -ap /etc/mysql/my.cnf /root/backup-def/DB/my.cnf.def-backup
+cp -ap /etc/mysql/my.cnf /root/backup/DB/my.cnf.def-backup
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/DB/my.cnf.def-backup
+ls -al /root/backup/DB/my.cnf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -116,7 +116,7 @@ ls -al /root/backup-def/DB/my.cnf.def-backup
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ;sleep 2
 else
-ls -al /root/backup-def/DB/my.cnf.def-backup
+ls -al /root/backup/DB/my.cnf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "

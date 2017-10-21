@@ -17,8 +17,8 @@ mkdir ./dstat/01-log ./access-analysys/01-log ./sql-analysys/01-log &&
 mkdir ./cpu-info/01-normal-log ./cpu-info/02-bench-log &&
 mkdir ./mem-info/01-normal-log ./mem-info/02-bench-log &&
 cd ../ &&
-mkdir backup-def &&
-cd backup-def &&
+mkdir backup &&
+cd backup &&
 mkdir AP DB WEB &&
 cd ../ &&
 tree /root
