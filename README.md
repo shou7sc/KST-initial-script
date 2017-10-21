@@ -8,59 +8,49 @@ isucon-initial-2017 KST
 ##### description
 
 ```
-root@isucon6-image:~# tree
-.
-├── analysis (分析用ディレクトリ)
+/root
+├── analysis ※分析用ディレクトリ
 │   ├── access-analysys
 │   │   ├── 01-log
 │   │   └── 02-acc-res-analysis
+│   ├── cpu-info
 │   ├── dstat
 │   │   ├── 01-log
 │   │   └── 02-dstat-res-analysis
+│   ├── mem-info
 │   └── sql-analysys
 │       ├── 01-log
 │       └── 02-sql-res-analysis
-├── backup-def (デフォルト用ディレクトリ)
+├── backup ※バックアップ用ディレクトリ
 │   ├── AP
-│   │   ├── isuda-def 
-│   │   │   ├── views
-│   │   │   │   ├── authenticate.erb
-│   │   │   │   ├── index.erb
-│   │   │   │   ├── _keyword.erb
-│   │   │   │   ├── keyword.erb
-│   │   │   │   ├── layout.erb
-│   │   │   │   └── register.erb
-│   │   │   └── web.rb
-│   │   └── isutar-def
-│   │       └── web.rb
 │   ├── DB
-│   │   ├── my.cnf.def
-│   │   └── mysql-backup-def.sql
 │   └── WEB
-│       └── nginx.conf.def
 └── kst-initial-script
-    ├── initial-backup #初期バックアップスクリプト群)
+    ├── initial-backup ※バックアップスクリプト
     │   ├── initial-backup.sh
     │   └── mysqldump-def-create.sh
-    ├── initial-check #初期システム構成把握用スクリプト群
+    ├── initial-check ※システム構成把握用スクリプト
     │   ├── git-ping-check.sh
+    │   ├── initial-check-command.sh
     │   └── initial-check-package.sh
-    ├── initial-intall #初期パッケージインストールスクリプト群
+    ├── initial-intall ※パッケージインストールスクリプト
     │   ├── alp-install.sh
     │   ├── initial-install-wrapper.sh
     │   ├── netdata-install.sh
     │   ├── package-install.sh
     │   └── pt-query-digest-install.sh
-    ├── initial-setting #初期設定スクリプト群
+    ├── initial-setting ※初期実行スクリプト
+    │   ├── initial-mysql-setting.sh
     │   ├── initial-nginx-setting.sh
-    │   ├── initial-useradd.sh
-    │   └── root-dir-create.sh
+    │   ├── root-dir-create.sh
+    │   └── user-setting.sh
     ├── README.md
-    └── script (便利スクリプト群)
+    └── script ※スクリプト
         ├── bench-finish-for-ruby.sh
+        ├── dstat-info-roop.sh
+        ├── mem-info-roop.sh
         ├── mysqldump-create.sh
         ├── mysqldump-restore.sh
-        ├── rest-app-for-python.sh
         └── rest-app-for-ruby.sh
 ```
 
