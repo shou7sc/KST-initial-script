@@ -30,7 +30,7 @@ echo "------------------------------------------------------------------------" 
 cp -ap $NGINXCONF /root/backup-def/WEB/nginx.conf.def-backup
 
 if [ $? = 0 ];then
-ls -al /root/backup-def/WEB/nginx.conf.def
+ls -al /root/backup-def/WEB/nginx.conf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
@@ -40,7 +40,7 @@ ls -al /root/backup-def/WEB/nginx.conf.def
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ;sleep 2
 else
-ls -al /root/backup-def/WEB/nginx.conf.def
+ls -al /root/backup-def/WEB/nginx.conf.def-backup
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
