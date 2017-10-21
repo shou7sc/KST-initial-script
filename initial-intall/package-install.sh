@@ -3,10 +3,10 @@
 ### package install
 
 sudo apt-get update 
-sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony" "sysstat" "mlocate" "redis-server"
-sudo apt install bc 
+sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "chrony" "sysstat" "mlocate" "redis-server" &&
+sudo apt install bc &&
 
-updatedb 
+updatedb &&
 
 #### chrony-setting
 
