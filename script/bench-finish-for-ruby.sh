@@ -5,10 +5,10 @@ set -ex
 # - nginx accsess log analysys
 #################################
 
-cat /var/log/nginx/access-log | alp -r  >> /root/analysis/access-analysys/02-acc-res-analysis/access-analysys.txt.$(date "+%Y%m%d_%H%M%S") &&
+cat /var/log/nginx/access_log | alp -r  >> /root/analysis/access-analysys/02-acc-res-analysis/access-analysys.txt.$(date "+%Y%m%d_%H%M%S") &&
 
-if [ -f /var/log/nginx/access-log ]; then
-    sudo mv /var/log/nginx/access-log /root/analysis/access-analysys/01-log/access-log.$(date "+%Y%m%d_%H%M%S")
+if [ -f /var/log/nginx/access_log ]; then
+    sudo mv /var/log/nginx/access_log /root/analysis/access-analysys/01-log/access_log.$(date "+%Y%m%d_%H%M%S")
 fi
 
 ##################################
