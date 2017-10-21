@@ -10,7 +10,7 @@ echo "###########################################################"
 cd /usr/local/src/ &&
 sudo wget "https://github.com/tkuchiki/alp/releases/download/v0.3.1/alp_linux_amd64.zip" &&
 sudo unzip "alp_linux_amd64.zip" &&
-sudo mv "alp" /usr/local/bin/alp 
+sudo mv alp /usr/local/bin/
 
 if [  $? = 0  ]; then
   echo "alp は正常にインストールされました"
