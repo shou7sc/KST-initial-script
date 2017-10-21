@@ -47,8 +47,7 @@ fi
     echo "------------------------------------------------------------------------" ; sleep 3
 
 cp -ap $NGINXCONF "$NGINXCONF.`date '+%Y%m%d_%H%M'`" &&
-
-mv "$NGINXCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/WEB/ && 
+mv "$NGINXCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/WEB/ 
 
 if [ $? = 0 ];then
     echo "                                                                        "
@@ -90,7 +89,7 @@ sed -i ""$ADDLINENUMBER"i\log_format ltsv \"time:\$time_local\"\n\
 \"\\\truntime:\$upstream_http_x_runtime\"\n\
 \"\\\tapptime:\$upstream_response_time\"\n\
 \"\\\tvhost:\$host\";\n\
-        access_log /var/log/nginx/access.log ltsv;" $NGINXCONF
+        access_log /var/log/nginx/access_log ltsv;" $NGINXCONF
 
 if [ $? = 0 ];then
     echo "$NGINXCONF"
@@ -104,8 +103,8 @@ if [ $? = 0 ];then
     echo "                                                                        "
     echo " $NGINXCONF の設定が正常に設定が書き換えられました。"
     echo "                                                                        "
-    echo " nginx -t                                                                    "
-    echo " systemctl restart nginx.service                                                               "
+    echo " nginx -t                                                               "
+    echo " systemctl restart nginx.service                                        "
     echo "                                                                        "
     echo "------------------------------------------------------------------------"
 else
@@ -121,8 +120,8 @@ else
     echo " $NGINXCONF の設定が正常に設定が書き換えられませんでした。"
     echo "                                                                        "
     echo "                                                                        "
-    echo " nginx -t                                                                    "
-    echo " systemctl restart nginx.service                                                               "
+    echo " nginx -t                                                               "
+    echo " systemctl restart nginx.service                                        "
     echo "                                                                        "
     echo "                                                                        "
     echo "------------------------------------------------------------------------" 

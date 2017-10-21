@@ -22,7 +22,7 @@ egrep 'slow_query_log|slow_query_log_file|long_query_time' $MYCONF
 if [ $? = 0 ];then
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                       "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m"
     echo "                - slow_query_log,slow_query_log_file,long_query_timeのいずれかがすでに設定済みです。"
     echo "                - $MYCONF の設定箇所を消して再度実行してください."
     echo "                                                                        "
@@ -31,27 +31,27 @@ if [ $? = 0 ];then
 else
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo " $MYCONF に slow_query_log,slow_query_log_file,long_query_time の設定がありません。 "
     echo " 書き換えが可能です。                                                   "
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ; sleep 3
 fi
-    echo "------------------------------------------------------------------------"
-    echo "                                                                        "
-    echo " 2.$MYCONF のバックアップを取得します........."
-    echo "                                                                        "
-    echo "------------------------------------------------------------------------" ; sleep 3
+
+echo "------------------------------------------------------------------------"
+echo "                                                                        "
+echo " 2.$MYCONF のバックアップを取得します........."
+echo "                                                                        "
+echo "------------------------------------------------------------------------" ; sleep 3
 
 cp -ap $MYCONF "$MYCONF.`date '+%Y%m%d_%H%M'`" &&
-
-mv "$MYCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/DB/ &&
+mv "$MYCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/DB/
 
 if [ $? = 0 ];then
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo " バックアップが正常に取得できました。"
     echo "                                                                        "
@@ -59,10 +59,11 @@ if [ $? = 0 ];then
 else
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                     "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
     echo "                                                                        "
     echo " バックアップが正常に取得できませんでした。"
     echo " 再度実行してください。                                                 "
+    echo "                                                                        "
     echo "------------------------------------------------------------------------"
     exit 1
 fi
@@ -84,7 +85,7 @@ if [ $? = 0 ];then
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo "                                                                        "
     echo " $MYCONF の設定が正常に設定が書き換えられました。"
@@ -100,7 +101,7 @@ else
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                     "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
     echo "                                                                        "
     echo "                                                                        "
     echo " $MYCONF の設定が正常に設定が書き換えられませんでした。"
