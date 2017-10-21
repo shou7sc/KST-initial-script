@@ -1,6 +1,6 @@
 #/bin/bash
 
-./initial-package-install.sh &&
+./package-install.sh &&
 
 if [  $? = 0  ]; then
   echo "initial-package は正常にインストールされました"
