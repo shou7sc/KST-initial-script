@@ -3,7 +3,7 @@
 ### package install
 
 sudo apt-get update 
-sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony" "sysstat" "mlocate" 
+sudo apt-get --yes install "dstat" "tree" "expect" "unzip" "mysql-common" "libmysqlclient20" "chrony" "sysstat" "mlocate" "redis-server"
 sudo apt install bc 
 
 updatedb 
