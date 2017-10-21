@@ -45,10 +45,11 @@ echo " 2.$MYCONF のバックアップを取得します........."
 echo "                                                                        "
 echo "------------------------------------------------------------------------" ; sleep 3
 
-cp -ap $MYCONF "$MYCONF.`date '+%Y%m%d_%H%M'`" &&
-mv "$MYCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/DB/
+cp -ap $MYCONF "my.cnf.`date '+%Y%m%d_%H%M'`" &&
+mv "my.cnf.`date '+%Y%m%d_%H%M'`" /root/backup-def/DB/
 
 if [ $? = 0 ];then
+ls -al /root/backup-def/DB/my.cnf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
     echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
@@ -57,6 +58,7 @@ if [ $? = 0 ];then
     echo "                                                                        "
     echo "------------------------------------------------------------------------"
 else
+ls -al /root/backup-def/DB/my.cnf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
     echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
@@ -91,7 +93,7 @@ if [ $? = 0 ];then
     echo " $MYCONF の設定が正常に設定が書き換えられました。"
     echo "                                                                        "
     echo " mysqld --verbose --help                                                "
-    echo " systemctl restart mysqld.service                                       "
+    echo " systemctl restart mysql.service                                       "
     echo "                                                                        "
     echo "------------------------------------------------------------------------"
 else

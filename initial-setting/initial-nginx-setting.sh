@@ -24,7 +24,7 @@ egrep 'log_format|access_log' $NGINXCONF
 if [ $? = 0 ];then
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                       "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
     echo "                - log_formatまたはaccess_log ディレクティブのどちらかがすでに設定済みです。"
     echo "                - $NGINXCONF の設定箇所を消して再度実行してください."
     echo "                                                                        "
@@ -33,7 +33,7 @@ if [ $? = 0 ];then
 else
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo " $NGINXCONF にlog_format|access_log の設定がありません。 "
     echo " 書き換えが可能です。                                                   "
@@ -46,13 +46,14 @@ fi
     echo "                                                                        "
     echo "------------------------------------------------------------------------" ; sleep 3
 
-cp -ap $NGINXCONF "$NGINXCONF.`date '+%Y%m%d_%H%M'`" &&
-mv "$NGINXCONF.`date '+%Y%m%d_%H%M'`" /root/backup-def/WEB/ 
+cp -ap $NGINXCONF "nginx.conf.`date '+%Y%m%d_%H%M'`" &&
+mv "nginx.conf.`date '+%Y%m%d_%H%M'`" /root/backup-def/WEB/
 
 if [ $? = 0 ];then
+ls -al /root/backup-def/WEB/nginx.conf.`date '+%Y%m%d_%H%M'`
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo " バックアップが正常に取得できました。"
     echo "                                                                        "
@@ -60,7 +61,7 @@ if [ $? = 0 ];then
 else
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                     "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
     echo "                                                                        "
     echo " バックアップが正常に取得できませんでした。"
     echo " 再度実行してください。                                                 "
@@ -98,7 +99,7 @@ if [ $? = 0 ];then
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === success                                                  "
+    echo -e " [result]  === \033[0;32msuccess\033[0;39m                           "
     echo "                                                                        "
     echo "                                                                        "
     echo " $NGINXCONF の設定が正常に設定が書き換えられました。"
@@ -114,7 +115,7 @@ else
     echo "------------------------------------------------------------------------"
     echo "                                                                        "
     echo "                                                                        "
-    echo " [result]  === fail                                                       "
+    echo -e " [result]  === \033[0;31mfail\033[0;39m                              "
     echo "                                                                        "
     echo "                                                                        "
     echo " $NGINXCONF の設定が正常に設定が書き換えられませんでした。"
