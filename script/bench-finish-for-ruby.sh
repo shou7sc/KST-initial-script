@@ -25,9 +25,8 @@ fi
 
 ls -al /root/analysis/sql-analysys/01-log/isucon-slow.log.$(date "+%Y%m%d_%H%M%S")
 
-sudo systemctl restart mysql.service &&
-sudo systemctl restart isutar.ruby.service &&
-sudo systemctl restart isuda.ruby.service &&
+
+sudo systemctl restart isubata.ruby.service &&
 sudo systemctl restart nginx.service
 
 tree /root/analysis/
