@@ -3,7 +3,7 @@
 ### package install
 
 sudo apt-get update 
-sudo apt-get --yes install "mysql-common" "libmysqlclient20" "dstat" "tree" "expect" "unzip" "chrony" "sysstat" "mlocate" "redis-server" &&
+sudo apt-get --yes install "vim" "mysql-common" "libmysqlclient20" "dstat" "tree" "expect" "unzip" "chrony" "sysstat" "mlocate" "redis-server" &&
 sudo apt install bc &&
 
 updatedb &&
