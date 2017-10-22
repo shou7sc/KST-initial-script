@@ -8,7 +8,5 @@ if [ -f /var/log/nginx/access_log ]; then
     sudo mv /var/log/nginx/access_log /root/analysis/access-analysys/01-log/access_log.$(date "+%Y%m%d_%H%M%S")
 fi
 
-sudo systemctl restart mysql.service &&
-sudo systemctl restart isutar.ruby.service &&
-sudo systemctl restart isuda.ruby.service &&
+sudo systemctl restart isubata.ruby.service &&
 sudo systemctl restart nginx.service
